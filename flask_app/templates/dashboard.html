@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WireFrame</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard_responsive.css') }}">
+</head>
+<body>
+    <div class="Contain"> 
+      <div class="Header">
+        <div class="HeaderWrapper">
+          <h1>Expnsv</h1>
+          <ul class="HeaderItems">
+            <li><span id="WelcomeUser" class="text-white">Welcome, {{ session['first_name'] }}</span></li>
+            <li class="nav-item"><a class="nav-link text-white" href="/reports">Create Report</a></li>
+            <li><a class="text-white" href="/logout">Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+      
+        <div class="Dashboard">
+                <div class="DashInfo">
+                    <div class="FormAndData">
+                        <div class="DateData">
+                            <h2 id="ThisWeek">This week</h2>
+                            <span><a class="nav-link text-white CreateExpenseLink" href="/create/expense/form">Create Expense</a></span>
+                            <h3>Total Spent: ${{weekly_cost_sum}}</h3>
+                            <h3>Purchase count: {{weekly_purchases}}</h3>
+                        </div>
+                    </div>
+                    <div class="Recent">
+                      <h3>Recent Expenses</h3>
+                    </div>
+                    <div class="TableContainer">
+                      <div class="TableWrapper">
+                          <table class="table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Expense</th>
+                                  <th scope="col">Cost</th>
+                                  <th scope="col">Date</th>
+                                  <th scope="col">Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                
+                                {% for expense in all_expenses  %}
+
+                                <tr>
+                                  <td class="DescTd">
+                                  <p class="ExpenseName" href="">{{expense.name}}</p> 
+                                  <details class="DescContainer">
+                                    <summary>See Description</summary>
+                                    <p class="Description">{{expense.description}}</p>
+                                   
+                                  </details>
+              
+                                  </td>
+                                  <td>${{expense.cost}}</td>
+                                  {% if expense.date %}
+                                  <td>{{ expense.date.strftime('%B %-d, %Y') }}</td>
+                                  {% else %}
+                                      <td>-</td>
+                                  {% endif %}
+                                  <td>
+                                    <form class="ExpenseIdForm">
+                                      <input type="hidden" name="expense_id" id="expense_id" value="{{expense.id}}">
+
+                                      <input type="submit" value="Edit" class="text-success EditLink p-1"/>
+                                      |
+                                      <input type="submit" value="Delete" class="text-danger DeleteLink p-1"/>
+                                    </form>
+                                  </td>
+                                </tr>
+                              
+                                {% endfor %}
+                              </tbody>
+                            </table>
+                      </div>
+                  </div>
+              </div>
+                
+                <div class="CreateExpense">
+                    <form class="ExpenseForm" action="/create/expense" method="post">
+                        <div class="form-group">
+                        </div>
+                        <div class="form-group">
+                          <label for="" class="form-label">Expense:</label>
+                          <input type="text" class="form-control" name="name" id="name">
+                          {% for message in get_flashed_messages( category_filter = ['invalid_name'] ) %}
+                          <div class="alert alert-danger" role="alert">
+                                  {{ message }}
+                          </div>
+                          {% endfor %}
+                        </div>
+                        <div class="form-group">
+                          <label for="" class="form-label">Cost:</label>
+                          <input type="number"  value="0.00" min="0.00" max="10000.00" step="0.01" class="form-control" name="cost" id="cost"/>
+                          {% for message in get_flashed_messages( category_filter = ['invalid_cost'] ) %}
+                          <div class="alert alert-danger" role="alert">
+                                  {{ message }}
+                          </div>
+                          {% endfor %}
+                          {% for message in get_flashed_messages( category_filter = ['invalid_cost_format'] ) %}
+                          <div class="alert alert-danger" role="alert">
+                                  {{ message }}
+                          </div>
+                          {% endfor %}
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="">Date:</label>
+                          <input type="date" class="form-check-date" name="date" id="date">
+                          {% for message in get_flashed_messages( category_filter = ['invalid_date'] ) %}
+                          <div class="alert alert-danger" role="alert">
+                                  {{ message }}
+                          </div>
+                          {% endfor %}
+                          {% for message in get_flashed_messages( category_filter = ['future_date'] ) %}
+                          <div class="alert alert-danger" role="alert">
+                                  {{ message }}
+                          </div>
+                          {% endfor %}
+                        </div>
+                        <div style="display: block; margin-bottom: 0.5rem;">
+                            <label class="form-label" for="">Description:</label>
+                            <Textarea class="form-control description" name="description" id="description" ></Textarea>
+                            {% for message in get_flashed_messages( category_filter = ['invalid_description'] ) %}
+                            <div class="alert alert-danger" role="alert">
+                                    {{ message }}
+                            </div>
+                            {% endfor %}
+                            {% for message in get_flashed_messages( category_filter = ['invalid_description_length'] ) %}
+                            <div class="alert alert-danger" role="alert">
+                                    {{ message }}
+                            </div>
+                            {% endfor %}
+                            {% for message in get_flashed_messages( category_filter = ['expense_success'] ) %}
+                            <div class="alert alert-success" role="alert">
+                                    {{ message }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <button type="submit" class="btn btn-primary">Create</button>
+                      </form>
+                </div>
+              
+              <div class="UpdateExpense">
+                <form class="UpdateForm"  method="post">
+                  <div class="form-group">
+                  </div>
+                  <div id="ExpenseName" class="form-group">
+                    
+                  </div>
+                  <div id="ExpenseCost" class="form-group">
+               
+                  </div>
+                  <div id="ExpenseDate" class="form-group">
+                      
+                  </div>
+                  <div id="ExpenseDescription" style="display: block; margin-bottom: 0.5rem;">
+                
+                  </div>
+                  <button type="submit" class="btn btn-success">Update</button>
+                </form>
+          </div>
+          <div class="DeleteExpense">
+       
+          </div>
+            <div class="UpdateSuccess alert alert-success" role="alert">
+              <p>Update was successful ✔ </p>
+            </div>
+          <div class="DeleteSuccess alert alert-success" role="alert">
+            <p>Delete was successful ✔ </p>
+          </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+@media only screen and (max-width: 1023px){
+ 
+    .Contain{
+        width: 100vw;
+    }
+    
+      .Header {
+        padding: 20px;
+        width: 100%;
+      }
+  
+      .HeaderWrapper {
+        width: 100%;
+      }
+  
+      .CreateExpense{
+        display: none;
+      }
+  
+      .DateData{
+          padding: 20px;
+      }
+  
+      .DateData > h2{
+      margin-top: 7px;
+      }
+  
+      .Dashboard{
+        width: 100%;
+      }
+   
+       .DashInfo{
+          width: 90%;
+      }
+      
+     
+      .CreateExpenseLink{
+          cursor: pointer;
+          display: block;  
+          margin-bottom: 5px;
+        }
+    
+        .FormAndData{
+        width: 100%;
+    
+      }
+    
+      .UpdateExpense  {
+        position: absolute;
+        top: 10%;
+        left: 15%;
+        width: 70%;
+        padding: 20px;
+      }
+    
+    
+      .DeleteExpense{
+          position: absolute;
+          top: 10%;
+          left: 15%;
+          width: 70%;
+          padding: 20px;
+      }
+    
+      .UpdateSuccess  {
+        position: absolute;
+        top: 40%;
+        left: 14%;
+        width: 70%;
+        font-size: 16pt;
+      }
+      
+      .DeleteSuccess  {
+        position: absolute;
+        top: 40%;
+        left: 14%;
+        width: 70%;
+        font-size: 16pt;
+      }
+    
+  }
+
+@media only screen and (max-width: 480px){
+ 
+    .Contain{
+      width: 100vw;
+  }
+  
+    .Header {
+      padding: 20px;
+      width: 100%;
+    }
+
+    #WelcomeUser{
+        display: none;
+    }
+
+    .HeaderWrapper {
+      width: 100%;
+    }
+
+    .CreateExpense{
+      display: none;
+    }
+
+    .DateData{
+        padding: 20px;
+    }
+
+    #ThisWeek{
+        display: none;
+    }
+  
+    .DateData > h2{
+    margin-top: 7px;
+    }
+
+    .Dashboard{
+      width: 100%;
+    }
+ 
+     .DashInfo{
+        width: 90%;
+    }
+
+    .TableWrapper{
+        width: 150vw;
+        display: flex;
+        justify-content: flex-start;
+    } 
+   
+    .CreateExpenseLink{
+        cursor: pointer;
+        display: block;  
+        margin-bottom: 5px;
+      }
+  
+      .FormAndData{
+      width: 100%;
+  
+    }
+  
+    .UpdateExpense  {
+      position: absolute;
+      top: 10%;
+      left: 15%;
+      width: 70%;
+      padding: 20px;
+    }
+  
+  
+    .DeleteExpense{
+        position: absolute;
+        top: 10%;
+        left: 15%;
+        width: 70%;
+        padding: 20px;
+    }
+  
+    .UpdateSuccess  {
+      position: absolute;
+      top: 40%;
+      left: 14%;
+      width: 70%;
+      font-size: 16pt;
+    }
+    
+    .DeleteSuccess  {
+      position: absolute;
+      top: 40%;
+      left: 14%;
+      width: 70%;
+      font-size: 16pt;
+    }
+  
+  .DescContainer {
+      margin-top: 10px;
+      width: 50vw;
+    }
+    
+    
+  }
+  
+
+
+
+
+

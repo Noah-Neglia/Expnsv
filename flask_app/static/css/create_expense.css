@@ -1,0 +1,128 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.Contain{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 15%;
+}
+
+.Header {
+    height: 10%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.795);
+    display: flex;
+    justify-content: center;
+  }
+
+  #WelcomeUser{
+      display: none;
+  }
+  
+  .HeaderWrapper {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .Header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .HeaderItems {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .HeaderItems li {
+    margin: 0 10px;
+  }
+  
+  .HeaderItems a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+.CreateExpense{
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.FormWrapper{
+    background-color: white;
+    padding: 1%;
+    padding-bottom: 2%;
+    max-height: 120%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 5%;
+    border: solid 1px rgb(203, 198, 198);
+    border-radius: 15px;
+}
+
+.FormDiv{
+    margin-bottom: 10%;
+}
+
+#description {
+    overflow: hidden;
+    font-size: 16px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+    resize: none; 
+  }
+
+  @media only screen and (max-width: 1023px){
+
+    .CreateExpense{
+        height: 60vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .FormWrapper{
+        padding: 10%;
+        width: 80vw;
+        max-height: 80vh;
+    }
+
+    .ExpenseForm{
+        width: 80vw;
+    }
+       
+  }
+
+  @media only screen and (max-width: 480px){
+
+    .FormWrapper{
+        padding: 10%;
+        width: 80vw;
+        max-height: 80vh;
+    }
+
+    .ExpenseForm{
+        width: 80vw;
+    }
+       
+  }

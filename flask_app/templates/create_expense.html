@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/create_expense.css') }}"> 
+</head>
+<body>
+ <div class="Contain">
+    <div class="Header">
+        <div class="HeaderWrapper">
+          <h1>Expnsv</h1>
+          <ul class="HeaderItems">
+            <li class="nav-item"><a class="nav-link text-white" href="/dashboard">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="/reports">Create Report</a></li>
+            <li><a class="text-white" href="/logout">Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+
+        <div class="CreateExpense">
+            <div class="FormWrapper">
+                <form class="ExpenseForm" action="/create/expense/responsive" method="post">
+                    <div class="form-group">
+                    </div>
+                    <div class="form-group">
+                    <label for="" class="form-label">Expense:</label>
+                    <input type="text" class="form-control" name="name" id="name">
+                    {% for message in get_flashed_messages( category_filter = ['invalid_name'] ) %}
+                    <div class="alert alert-danger" role="alert">
+                            {{ message }}
+                    </div>
+                    {% endfor %}
+                    </div>
+                    <div class="form-group">
+                    <label for="" class="form-label">Cost:</label>
+                    <input type="number"  value="0.00" min="0.00" max="10000.00" step="0.01" class="form-control" name="cost" id="cost"/>
+                    {% for message in get_flashed_messages( category_filter = ['invalid_cost'] ) %}
+                    <div class="alert alert-danger" role="alert">
+                            {{ message }}
+                    </div>
+                    {% endfor %}
+                    {% for message in get_flashed_messages( category_filter = ['invalid_cost_format'] ) %}
+                    <div class="alert alert-danger" role="alert">
+                            {{ message }}
+                    </div>
+                    {% endfor %}
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="">Date:</label>
+                    <input type="date" class="form-check-date" name="date" id="date">
+                    {% for message in get_flashed_messages( category_filter = ['invalid_date'] ) %}
+                    <div class="alert alert-danger" role="alert">
+                            {{ message }}
+                    </div>
+                    {% endfor %}
+                    {% for message in get_flashed_messages( category_filter = ['future_date'] ) %}
+                    <div class="alert alert-danger" role="alert">
+                            {{ message }}
+                    </div>
+                    {% endfor %}
+                    </div>
+                    <div style="display: block; margin-bottom: 0.5rem;">
+                        <label class="form-label" for="">Description:</label>
+                        <Textarea class="form-control description" name="description" id="description" ></Textarea>
+                        {% for message in get_flashed_messages( category_filter = ['invalid_description'] ) %}
+                        <div class="alert alert-danger" role="alert">
+                                {{ message }}
+                        </div>
+                        {% endfor %}
+                        {% for message in get_flashed_messages( category_filter = ['invalid_description_length'] ) %}
+                        <div class="alert alert-danger" role="alert">
+                                {{ message }}
+                        </div>
+                        {% endfor %}
+                        {% for message in get_flashed_messages( category_filter = ['expense_success'] ) %}
+                        <div class="alert alert-success" role="alert">
+                                {{ message }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

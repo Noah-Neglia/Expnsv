@@ -1,0 +1,267 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.Contain{
+    height: 100vh;
+    background: linear-gradient(to bottom, #f5f5f5, #dcdcdc);
+}
+
+.Header {
+    height: 10%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.795);
+    display: flex;
+    justify-content: center;
+  }
+
+  
+  .HeaderWrapper {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .Header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .HeaderItems {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .HeaderItems li {
+    margin: 0 10px;
+  }
+  
+  .HeaderItems a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+.FormWrapper{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.DateForm{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.alert, .alert-danger{
+  display: none;
+}
+
+#description {
+    overflow: hidden;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+    resize: none; 
+  }
+  
+
+#validationsWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#dateValidations{
+    height: 50px;
+    width: 50%;
+    text-align: center;
+}
+
+.ResultsWrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Results{
+ background-color: rgba(0, 0, 0, 0.795);
+ border: 1px solid #ddd;
+ width: 60%;
+ padding: 2%;
+ border-top-left-radius: 15px;
+ border-top-right-radius: 15px;
+ display: flex;
+ justify-content: space-evenly;
+}
+
+.Results h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+
+.BodyWrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.Body{
+    background-color: white;
+    height: 80%;
+    width:  60%;
+    border: solid 1px rgb(203, 198, 198);
+    border-top: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow-y: auto;
+}
+
+.TableContainer{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+        
+    }
+    
+.TableWrapper{
+    height: 54vh;
+    width: 100%;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    }
+    
+  .table{
+    height: 50%;
+    width: 80%;
+    }
+
+  .NoDataFound{
+    position: absolute;
+    top: 40%;
+    left: 34%;
+    width: 32%;
+    height: auto;
+    text-align: center;
+    font-size: 18pt;
+    display: none;
+  }
+
+.DescTd{
+    width: 20vw;
+}
+
+.DescContainer {
+    margin-top: 10px;
+    width: 20vw;
+  }
+  
+  .DescContainer summary {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .Description {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    word-wrap: break-word;
+    max-width: 100%;
+  }
+
+  .UpdateExpense  {
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    box-shadow: 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, 0.697);
+    background-color: white;
+    padding: 1%;
+    padding-bottom: 2%;
+    max-height: 150%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 5%;
+    border: solid 1px rgb(203, 198, 198);
+    border-radius: 15px;
+    transform: scale(0);
+    transform-origin: center;
+  }
+  
+  .UpdateExpense.show {
+    transform: scale(1);
+  }
+
+
+
+.DeleteExpense{
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    box-shadow: 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, 0.697);
+    background-color: white;
+    padding: 2%;
+    padding-bottom: 2%;
+    height: 35%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+    border: solid 1px rgb(203, 198, 198);
+    border-radius: 15px;
+    transform: scale(0);
+    transform-origin: center;
+}
+
+.DeleteExpense.show {
+    transform: scale(1);
+}
+
+.UpdateSuccess  {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  width: 30%;
+  height: auto;
+  box-shadow: 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, 0.697);
+  text-align: center;
+  font-size: 24pt;
+  display: none;
+}
+
+.DeleteSuccess  {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  width: 30%;
+  height: auto;
+  box-shadow: 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, 0.697);
+  text-align: center;
+  font-size: 24pt;
+  display: none;
+}

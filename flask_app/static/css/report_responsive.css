@@ -1,0 +1,218 @@
+@media only screen and (max-width: 1023px){
+
+
+.Body{
+    height: 80%;
+    width:  90%;
+     
+    }
+.FormWrapper{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.DateForm{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.ResultsWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      }
+#validationsWrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+#dateValidations{
+    height: 10px;
+    width: 100%;
+    text-align: center;
+}
+      
+.Results{
+    margin-top: 10%;
+    width: 90%;
+ 
+}
+      
+.BodyWrapper{
+    display: flex;
+    justify-content: center;
+    }
+
+.DescTd{    
+    width: 20vw;
+}
+
+.TableContainer{
+    height: 78%;
+}
+        
+.TableWrapper{
+    width: 85vw;
+    display: flex;
+    justify-content: center;
+} 
+        
+.table{
+    height: 50%;
+    width: 80%;
+}
+
+
+.NoDataFound{
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    width: 60%;
+  }
+  
+.UpdateExpense  {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 70%;
+    padding: 20px;
+  }
+
+
+  .DeleteExpense{
+      position: absolute;
+      top: 10%;
+      left: 15%;
+      width: 70%;
+      padding: 20px;
+  }
+
+  .UpdateSuccess  {
+    position: absolute;
+    top: 40%;
+    left: 14%;
+    width: 70%;
+    font-size: 16pt;
+  }
+  
+  .DeleteSuccess  {
+    position: absolute;
+    top: 40%;
+    left: 14%;
+    width: 70%;
+    font-size: 16pt;
+  }
+    
+   
+
+ 
+}
+
+@media only screen and (max-width: 480px){
+    #WelcomeUser{
+        display: none;
+    }
+
+.Body{
+    height: 80%;
+    width:  90%;
+     
+    }
+.DateForm{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+.ResultsWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      }
+#validationsWrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+#dateValidations{
+    height: 10px;
+    width: 100%;
+    text-align: center;
+}
+      
+.Results{
+    margin-top: 10%;
+    width: 90%;
+ 
+}
+      
+.BodyWrapper{
+    display: flex;
+    justify-content: center;
+    }
+
+.DescTd{
+min-width: 50vw;
+}
+
+.Description{
+    min-width: 50vw;
+}
+
+.TableContainer{
+    height: 78%;
+}
+        
+.TableWrapper{
+    width: 75vw;
+    display: flex;
+    justify-content: flex-start;
+} 
+        
+.table{
+    height: 50%;
+    width: 80%;
+}
+
+  
+.UpdateExpense  {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 70%;
+    padding: 20px;
+  }
+
+
+  .DeleteExpense{
+      position: absolute;
+      top: 10%;
+      left: 15%;
+      width: 70%;
+      padding: 20px;
+  }
+
+  .UpdateSuccess  {
+    position: absolute;
+    top: 40%;
+    left: 14%;
+    width: 70%;
+    font-size: 16pt;
+  }
+  
+  .DeleteSuccess  {
+    position: absolute;
+    top: 40%;
+    left: 14%;
+    width: 70%;
+    font-size: 16pt;
+  }
+        
+}
+ 

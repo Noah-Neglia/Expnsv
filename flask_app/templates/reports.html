@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/report.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/report_responsive.css') }}">
+</head>
+</head>
+<body>
+    <div class="Contain"> 
+        <div class="Header">
+            <div class="HeaderWrapper">
+              <h1>Expnsv</h1>
+              <ul class="HeaderItems">
+                <li id="WelcomeUser"><span class="text-white">Welcome, {{ session['first_name'] }}</span></li>
+                <li class="nav-item"><a class="nav-link text-white" href="/dashboard">Home</a></li>
+                <li><a class="text-white" href="/logout">Log Out</a></li>
+              </ul>
+            </div>
+          </div>
+            <div class="FormWrapper">
+                <form class="DateForm" id="DateForm">
+                    <div class="FormDiv">
+                        <label class="form-label" for="">Start Date:</label>
+                        <input type="date" class="form-check-date" name="start_date" id="start_date">
+                        <div class="alert alert-danger AlertStartDate" role="alert">
+
+                        </div>
+                    </div>
+                    
+                    <div class="FormDiv">
+                        <label class="form-label" for="">End Date:</label>
+                        <input type="date" class="form-check-date" name="end_date" id="end_date">
+                        <div class="alert alert-danger AlertEndDate" role="alert">
+
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Run Report</button>
+                </form>
+            </div>
+            <div class="ResultsWrapper">
+                <div class="Results">
+                     <h3>Total Spent: $0.00</h3>
+                     <h3>Purchase Count: 0</h3>
+                </div>
+            </div>
+            <div class="BodyWrapper">
+                <div class="Body">
+                    <div class="TableContainer">
+                        <div class="TableWrapper">
+                            <table class="table">
+                                <thead>
+                                    <tr> 
+                                    <th scope="col">Expense</th>
+                                    <th scope="col">Cost</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Actions</th>
+                                    </tr>
+                                 </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <div class="UpdateExpense">
+        <form class="UpdateForm"  method="post">
+          <div class="form-group">
+          </div>
+          <div id="ExpenseName" class="form-group">
+            
+          </div>
+          <div id="ExpenseCost" class="form-group">
+       
+          </div>
+          <div id="ExpenseDate" class="form-group">
+              
+          </div>
+          <div id="ExpenseDescription" style="display: block; margin-bottom: 0.5rem;">
+        
+          </div>
+          <button type="submit" class="btn btn-success">Update</button>
+        </form>
+  </div>
+  <div class="DeleteExpense">
+
+  </div>
+</div>
+    <div class="UpdateSuccess alert alert-success" role="alert">
+    <p>Update was successful ✔ </p>
+    </div>
+    <div class="DeleteSuccess alert alert-success" role="alert">
+    <p>Delete was successful ✔ </p>
+    </div>
+    <div class="NoDataFound alert alert-danger" role="alert">
+        <p>No Expenses found in this range.</p>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/report.js') }}"></script>
+</body>
+</html>
