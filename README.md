@@ -37,12 +37,11 @@ My purpose for creating Expnsv was to combine my knowledge of Python/Flask with 
 
 How I used these technologies:
 
-- Used Jinja2 to display data from the controller onto the client HTML.
-- Implemented the Bootstrap library to quickly construct high quality Forms
-- Designed a login and registration that stores user data in session to protect page views from unregistered users.
-- Enacted Ajax to dynamically render data onto the HTML without having to refresh the page.
-- Utilized Jquery to hide and show elements, and display validation messages.
-
+- Used jinja2 templates to display data from the server to the client html.
+- Enacted Ajax to dynamically load data onto the HTML without refreshing the page.
+- With Jquery, I concealed and manifested validations and success messages from the page.
+- Protected page views from unregistered users, by storing user information in session upon logging in and registering.
+- Utilized SQL to constructive operative queries to draw information from the database to the client
 
 
 
