@@ -15,10 +15,9 @@
 }
 
 .Login{
-    height: 50%;
-    width: 65%;
     background-color: rgba(0, 0, 0, 0.795);
     color: white;
+    width: 35%;
     padding: 35px;
     border-radius: 15px;
 
@@ -35,6 +34,17 @@
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+@media only screen and (max-width: 1023px){
+    .Login{
+        width: 60%;
+        background-color: rgba(0, 0, 0, 0.795);
+        color: white;
+        padding: 35px;
+        border-radius: 15px;
+    
+    }
 }
 
 @media only screen and (max-width: 480px){
