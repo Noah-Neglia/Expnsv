@@ -1,5 +1,5 @@
 # Expnsv
-A responive accounting application designed solely to keep track of outgoing expenses, built entirely with Python/Flask.
+A responsive accounting application designed solely to keep track of outgoing expenses, built entirely with Python/Flask.
 # Screenshots
 Login:
 <br>
