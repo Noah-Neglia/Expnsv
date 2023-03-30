@@ -41,7 +41,7 @@ How I used these technologies:
 - Enacted Ajax to dynamically load data onto the HTML without refreshing the page.
 - With Jquery, I concealed and manifested validations and success messages from the page.
 - Protected page views from unregistered users, by storing user information in session upon logging in and registering.
-- Utilized SQL to constructive operative queries to draw information from the database to the client
+- Utilized SQL to construct effective queries to draw information from the database to the client
 
 
 
