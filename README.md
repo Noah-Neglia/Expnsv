@@ -39,10 +39,9 @@ How I used these technologies:
 
 - Used jinja2 templates to display data from the server to the client html.
 - Enacted Ajax to dynamically load data onto the HTML without refreshing the page.
-- With Jquery, I concealed and manifested validations and success messages from the page.
+- Concealed and manifested validations and success messages from the page with Jquery
 - Protected page views from unregistered users, by storing user information in session upon logging in and registering.
-- Utilized SQL to construct effective queries to draw information from the database to the client
-
+- Utilized SQL to construct effective queries to draw information from the database to the client.
 
 
  
